@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to the frontend side 👋</h1>
+<h1 align="center">Welcome to the backend side 👋</h1>
 <p>
   <a href="https://www.npmjs.com/package/frontend" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/frontend.svg">
@@ -6,26 +6,19 @@
 </p>
 
 ## Description
-The frontend is built using Vite and React. Vite provides a fast and optimized development environment, while React is used for building user interfaces. The combination of these technologies ensures a smooth and efficient development experience.
 
-## Install
+This backend project is built using [PocketBase](https://pocketbase.io/), an open-source backend solution that provides a real-time database, authentication, and file storage. PocketBase is designed to be lightweight and easy to use, making it a great choice for small to medium-sized projects.
 
-```sh
-npm install
-```
 
 ## Usage
 
 ```sh
-npm run dev
+./pocketbase serve
 ```
 
+# Create superuser
 ```sh
-npm start
-```
-
-```sh
-npm build
+./pocketbase superuser create EMAIL PASS
 ```
 
 ## Author
