@@ -3,18 +3,9 @@ import fetchAll from "@/utils/fetchAll";
 import { useEffect, useState } from "react";
 import Hero from "@/components/Hero";
 import { Link } from "react-router-dom";
+import { Products } from "@/data.types";
 
 const Home = () => {
-  interface Products {
-    id: string;
-    name: string;
-    description: string;
-    price: number;
-    category: string;
-    image: string;
-    created: Date;
-    updated: Date;
-  }
 
   const [products, setProducts] = useState<Products[]>([]);
 

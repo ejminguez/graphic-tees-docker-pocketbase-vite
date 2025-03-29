@@ -1,15 +1,5 @@
 import { pb } from "@/pocketbaseClient/pocketbaseClient";
-
-interface Products {
-    id: string;
-    name: string;
-    description: string;
-    price: number;
-    category: string;
-    image: string;
-    created: Date;
-    updated: Date;
-}
+import { Products } from "@/data.types"
 
 const fetchAll = async () => {
     const records = await pb.collection('product').getFullList({});
