@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Products } from "@/data.types";
 import fetchProduct from "@/utils/fetchSingleProduct";
 import { pb } from "@/pocketbaseClient/pocketbaseClient";
+import ShirtViewer from "@/components/ShirtViewer";
 
 const Product = () => {
   const { id } = useParams();
@@ -28,6 +29,10 @@ const Product = () => {
     return `${pb.baseURL}/api/files/pbc_1108966215/${productID}/${fileName}`;
   };
 
+  const getModelUrl = (productID: string, fileName: string) => {
+    return `${pb.baseURL}/api/files/pbc_1108966215/${productID}/${fileName}`;
+  }
+
   if (!product) {
     return <h1>Loading...</h1>;
   }
@@ -35,11 +40,11 @@ const Product = () => {
   console.log(product);
 
   return (
-    <section className="grid items-center gap-8">
+    <section className="grid items-center gap-8 min-h-screen w-full">
 
-      <h1 className="text-center">
-        Individual Product with 3D view using threeJS
-      </h1>
+      <div className="bg-red-300 h-screen w-[60%] mx-auto relative top-10">
+        <ShirtViewer modelUrl={getModelUrl(product.id, product.model)} />
+      </div>
 
       <div key={product.id} className="p-4 bg-white shadow-lg xl:w-1/4 mx-auto">
         {/* PRODUCT CARD */}
