@@ -7,8 +7,9 @@ import ShirtViewer from "@/components/ShirtViewer";
 
 const Product = () => {
   const { id } = useParams();
-
   const [product, setProduct] = useState<Products | null>(null);
+
+
 
   useEffect(() => {
     const fetchSingleProduct = async () => {
@@ -25,13 +26,9 @@ const Product = () => {
     }
   }, [id]);
 
-  const getImageUrl = (productID: string, fileName: string) => {
-    return `${pb.baseURL}/api/files/pbc_1108966215/${productID}/${fileName}`;
-  };
-
   const getModelUrl = (productID: string, fileName: string) => {
     return `${pb.baseURL}/api/files/pbc_1108966215/${productID}/${fileName}`;
-  }
+  };
 
   if (!product) {
     return <h1>Loading...</h1>;
@@ -40,34 +37,25 @@ const Product = () => {
   console.log(product);
 
   return (
-    <section className="grid items-center gap-8 min-h-screen w-full">
-
-      <div className="bg-red-300 h-screen w-[60%] mx-auto relative top-10">
-        <ShirtViewer modelUrl={getModelUrl(product.id, product.model)} />
-      </div>
-
-      <div key={product.id} className="p-4 bg-white shadow-lg xl:w-1/4 mx-auto">
+    <section className="w-full">
+      <div className="xl:w-[70%] mx-auto xl:p-8">
         {/* PRODUCT CARD */}
-        <div>
-          <div className="overflow-clip">
-            <img
-              src={getImageUrl(product.id, product.image)}
-              alt={product.name}
-              className="hover:scale-[105%] transition-all duration-300 cursor-pointer"
-            />
+        <div className="xl:p-8 grid gap-4">
+          <div className="xl:w-[20%] mx-auto">
+            <div className="text-center">
+              <h2>{product.name}</h2>
+              <p className="text-gray-400">{product.description}</p>
+              {product.price == 0 ? (
+                <p className="font-bold">NOT FOR SALE</p>
+              ) : (
+                <p className="font-bold">${product.price}</p>
+              )}
+              <p>{product.category}</p>
+            </div>
           </div>
-          <div className="grid">
-            <h2>{product.name}</h2>
-            <p className="text-gray-400">{product.description}</p>
+          <div className="bg-white shadow-md rounded-lg">
+            <ShirtViewer modelUrl={getModelUrl(product.id, product.model)} />
           </div>
-
-          {product.price == 0 ? (
-            <p className="font-bold">NOT FOR SALE</p>
-          ) : (
-            <p className="font-bold">${product.price}</p>
-          )}
-
-          <p>{product.category}</p>
         </div>
       </div>
     </section>

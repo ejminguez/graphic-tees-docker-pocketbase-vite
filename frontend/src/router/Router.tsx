@@ -1,15 +1,15 @@
-import {createBrowserRouter} from 'react-router-dom';
-import Home from '@/pages/Home';
-import ErrorPage from '@/pages/ErrorPage';
-import Shop from '@/pages/Shop';
-import Product from '@/pages/Product';
-import About from '@/pages/About';
-import App from '@/App';
+import { createBrowserRouter } from "react-router-dom";
+import Home from "@/pages/Home";
+import ErrorPage from "@/pages/ErrorPage";
+import Shop from "@/pages/Shop";
+import Product from "@/pages/Product";
+import About from "@/pages/About";
+import App from "@/App";
 
 const routes = createBrowserRouter([
     {
         path: '/',
-        element: <App />,
+        element: <App />,   // Wrap everything in ScrollToTop
         errorElement: <ErrorPage />,
         children: [
             {
@@ -30,6 +30,6 @@ const routes = createBrowserRouter([
             }
         ],
     }
-])
+]);
 
 export default routes;

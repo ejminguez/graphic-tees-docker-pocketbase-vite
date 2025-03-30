@@ -12,6 +12,10 @@ const Hero = () => {
         <Button variant="heroButton" className="xl:py-6" onClick={() => navigate("/shop")}>shop now</Button>
       </div>
 
+      <div className="flex flex-col items-center w-[55%] mx-auto gap-8 xl:w-[20%] xl:absolute xl:top-[25%] xl:left-[70%]">
+        <h3 className="text-white text-5xl">Customize your own shirt now!</h3>
+        <p className="text-white italic">please commission me I need money</p>
+      </div>
 
       <img
         src="src/assets/shirt-hero.png"

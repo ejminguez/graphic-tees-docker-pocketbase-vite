@@ -65,7 +65,7 @@ const Home = () => {
                 {product.price == 0 ? (
                   <p className="font-bold">NOT FOR SALE</p>
                 ) : (
-                  <p className="font-bold">${product.price}</p>
+                  <p className="font-bold">&#x20B1;{product.price}</p>
                 )}
 
                 <p>{product.category}</p>
