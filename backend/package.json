@@ -1,0 +1,23 @@
+{
+    "name": "graphic-tees-docker-pocketbase-vite",
+    "private": true,
+    "version": "0.0.1",
+    "description": "A dockerized PocketBase and Vite application for my graphic tee showcases.",
+    "scripts": {
+        "dev": "npm docker:start || npm docker:run",
+        "docker:build": "docker build -t graphic-tee-backend .",
+        "docker:run": "docker run --name graphic-teee-backend -d -p 8090:8090 -v ./pb_data:/pb/pb_data -v ./pb_migrations:/pb/pb_migrations graphic-tee-backend",
+        "docker:start": "docker start graphic-teee-backend",
+        "docker:stop": "docker stop graphic-teee-backend",
+        "docker:rm": "docker rm graphic-teee-backend"
+    },
+    "author": "ejminguez",
+    "license": "MIT",
+    "keywords": [
+        "pocketbase",
+        "fly",
+        "CMS",
+        "deployment",
+        "CI/CD"
+    ]
+}

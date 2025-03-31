@@ -118,6 +118,10 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+@theme {
+  --breakpoint-2xl: 90rem; /* 1440px ÷ 16 = 90rem */
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
